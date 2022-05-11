@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Feedback</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+</head>
+
+<body>
+    <h1>Website Feedback Form</h1>
+
+    <form action="main.html">
+        <fieldset>
+            <legend>Is this the first time you have visited the website?</legend>
+            <label for="first_time_visit_yes">
+                <input type="radio" id="first_time_visit_yes" name="first-time-visit" value="yes">
+                yes</label>
+
+            <label for="first_time_visit_no">
+                <input type="radio" id="first_time_visit_no" name="first-time-visit" value="no">
+                no</label><br>
+        </fieldset>
+
+        <fieldset>
+            <legend>What is the <strong>primary</strong> reason you came to the website?</legend>
+            <textarea id="first_time_visit_text" rows="5"></textarea>
+        </fieldset>
+
+        <fieldset>
+            <legend>Did you find what you needed?</legend>
+            <label for="found_all">
+                <input type="radio" id="found_all" name="found-needed" value="all">
+                Yes, all of it</label>
+            <label for="found_some">
+                <input type="radio" id="found_some" name="found-needed" value="some">
+                Yes, some of it</label>
+            <label for="found_none">
+                <input type="radio" id="found_none" name="found-needed" value="no">
+                No, none of it</label><br>
+
+        </fieldset>
+
+        <fieldset>
+            <legend>If you did <strong>not</strong> find any or all of what you needed, please tell us what information you were
+                lookingfor.</legend>
+
+            <textarea name="not-found" rows="5"></textarea>
+        </fieldset>
+
+        <fieldset>
+            <legend>Please tell us how easy it is to find information on the site.</legend>
+            <label for="find-rate-1">
+                <input type="radio" id="find-rate-1" name="rate-find" value="1">
+                Very easy</label>
+
+            <label for="find-rate-2">
+                <input type="radio" id="find-rate-2" name="rate-find" value="2">
+                Easy</label>
+
+            <label for="find-rate-3">
+                <input type="radio" id="find-rate-3" name="rate-find" value="3">
+                Average</label>
+
+            <label for="find-rate-4">
+                <input type="radio" id="find-rate-4" name="rate-find" value="4">
+                Difficult</label>
+
+            <label for="find-rate-5">
+                <input type="radio" id="find-rate-5" name="rate-find" value="5">
+                Very Difficult</label>
+        </fieldset>
+
+        <fieldset>
+            <legend>What is the overall impression of the site?</legend>
+
+            <table>
+                <tr>
+                    <th></th>
+                    <th data-state="Below Expect-ations">Below Expectations</th>
+                    <th data-state="Meets Expect-ations">Meets Expectations</th>
+                    <th data-state="Exceeds Expect-ations">Exceeds Expectations</th>
+                </tr>
+                <tr>
+                    <td>Professional</td>
+                    <td><input type="radio" name="impression-professional" value="below"></td>
+                    <td><input type="radio" name="impression-professional" value="meet"></td>
+                    <td><input type="radio" name="impression-professional" value="exceed"></td>
+                </tr>
+                <tr>
+                    <td>Informative</td>
+                    <td><input type="radio" name="impression-informative" value="below"></td>
+                    <td><input type="radio" name="impression-informative" value="meet"></td>
+                    <td><input type="radio" name="impression-informative" value="exceed"></td>
+                </tr>
+                <tr>
+                    <td>Visually Pleasing</td>
+                    <td><input type="radio" name="impression-visuallyPleasing" value="below"></td>
+                    <td><input type="radio" name="impression-visuallyPleasing" value="meet"></td>
+                    <td><input type="radio" name="impression-visuallyPleasing" value="exceed"></td>
+                </tr>
+            </table>
+        </fieldset>
+
+        <p>Please add any comments you have for improving the website. We welcome suggestions on specific areas for
+            improvements, features you would like to see added to the site, and examples of what you consider good
+            websites.</p>
+
+        <fieldset>
+            <legend>Comments</legend>
+            <textarea id="improving" rows="5"></textarea>
+        </fieldset>
+
+        <fieldset id="personal-info">
+            <legend>We would like to know a little bit about you</legend>
+
+            <label for="email">eMail
+                <input type="email" id="email" name="email" placeholder="user@example.com" required>
+            </label>
+
+            <label for="homepage">Your Homepage
+                <input type="url" id="homepage" name="homepage" placeholder="http://www.example.com/">
+            </label>
+
+            <label for="birthday">Date of birth
+                <input type="date" id="birthday" name="birthday">
+            </label>
+        </fieldset>
+        <button>Send</button>
+    </form>
+
+</body>
+
+</html>
