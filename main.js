@@ -147,6 +147,13 @@ class BookStore {
          *     <h1>HTML 5 Books</h1>
          * </section>
          */
+        var section =  document.createElement('section');
+        section.id = category.id;
+        var h1 =  document.createElement('h1');
+        h1.append(category.title);
+        section.appendChild(h1);
+        document.querySelector('main').lastElementChild.insertAdjacentElement('beforebegin', section);
+        
     }
 
     addBookToDOM(category, book) {
@@ -195,6 +202,44 @@ class BookStore {
          *         you develop for the Web.</p>
          * </article>
          */
+        var article =  document.createElement('article');
+        var img =  document.createElement('img');
+        var h3 =  document.createElement('h3');
+        var p =  document.createElement('p');
+        var p2 =  document.createElement('p');
+        var p3 =  document.createElement('p');
+        var label =  document.createElement('label');
+        var select =  document.createElement('select');
+        
+        article.id = book.isbn;
+        h3.append(book.title);
+        article.appendChild(h3);
+
+        img.src = book.cover;
+        img.alt = 'Cover of \'' + book.title+'\'';
+        article.appendChild(img);
+
+        label.append('Quantity:');
+        for(var i = 0; i < 5; i++){
+            var option =  document.createElement('option');
+            option.append(i+1);
+            option.value = i+1;
+            p.appendChild(label);
+            article.appendChild(p);
+        }
+        label.appendChild(select);
+        article.appendChild(label);
+
+        p2.append('Price: ' + book.price +' \u20AC');
+        article.appendChild(p2);
+
+        p3.append(book.description);
+        article.appendChild(p3);
+        
+        var section = document.querySelector('#'+category.id);
+        section.appendChild(article);
+
+
     }
 }
 
