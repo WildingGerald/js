@@ -210,6 +210,7 @@ class BookStore {
         var p3 =  document.createElement('p');
         var label =  document.createElement('label');
         var select =  document.createElement('select');
+        var input =  document.createElement('input');
         
         article.id = book.isbn;
         h3.append(book.title);
@@ -224,11 +225,14 @@ class BookStore {
             var option =  document.createElement('option');
             option.append(i+1);
             option.value = i+1;
-            p.appendChild(label);
-            article.appendChild(p);
+            select.appendChild(option);
         }
         label.appendChild(select);
-        article.appendChild(label);
+        p.appendChild(label);
+        input.type = 'button';
+        input.value = 'Add to cart';
+        p.appendChild(input);
+        article.appendChild(p);
 
         p2.append('Price: ' + book.price +' \u20AC');
         article.appendChild(p2);
@@ -238,8 +242,6 @@ class BookStore {
         
         var section = document.querySelector('#'+category.id);
         section.appendChild(article);
-
-
     }
 }
 
