@@ -88,6 +88,17 @@ class ShoppingCart {
          *     <span>3 Pcs. - 74.4€</span>
          * </li>
          */
+        var li =  document.createElement('li');
+        li.id = book.cartId;
+        var span = document.createElement('span')
+        span.textContent = book.title;
+        li.append(span);
+        span = document.createElement('span')
+        span.textContent = ` ${book.quantity} Pcs - ${this.round(book.quantity * book.price)}`;
+        li.append(span);
+        var shoppingCart = document.querySelector('aside ul');
+        shoppingCart.append(li);
+        
     }
 
     calculateSum() {
@@ -103,6 +114,7 @@ class ShoppingCart {
          * Find a way to round the given amount with preision 2 and return the
          * rounded amount. 
          */
+        return Math.round(amount * 100) / 100;
     }
 
     showSum() {
@@ -212,7 +224,7 @@ class BookStore {
         var select =  document.createElement('select');
         var input =  document.createElement('input');
         
-        article.id = book.isbn;
+        article.id = book.id;
         h3.append(book.title);
         article.appendChild(h3);
 
@@ -231,6 +243,7 @@ class BookStore {
         p.appendChild(label);
         input.type = 'button';
         input.value = 'Add to cart';
+        input.onclick = () => {book.addTo(this.cart)};
         p.appendChild(input);
         article.appendChild(p);
 
